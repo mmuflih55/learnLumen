@@ -15,9 +15,24 @@ class ChecklistController extends Controller
     {
         //
     }
-
     
-    public function createCheckList(Request $req){
+    public function getChecklist(Request $req){
+        return (new Response($req->all(),201))->header('Content-Type','application/json');
+    }
+
+    public function getChecklists(Request $req){
+        return (new Response($req->all(),201))->header('Content-Type','application/json');
+    }
+
+    public function updateChecklist(Request $req){
+        return (new Response($req->all(),201))->header('Content-Type','application/json');
+    }
+
+    public function deleteChecklist(Request $req){
+        return (new Response($req->all(),201))->header('Content-Type','application/json');
+    }
+    
+    public function createChecklist(Request $req){
         // example req
         // "data": {
         //     "attributes": {
