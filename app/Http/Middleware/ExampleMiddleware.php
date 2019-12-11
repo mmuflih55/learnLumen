@@ -15,6 +15,9 @@ class ExampleMiddleware
      */
     public function handle($request, Closure $next)
     {
+        if (in_array($request->method(), ['POST', 'PUT', 'PATCH']) && !$request->isJson()) {
+            abort(500);
+        }
         return $next($request);
     }
 }

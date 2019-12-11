@@ -14,6 +14,7 @@ class Items extends Migration
     public function up()
     {
         Schema::create('items', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('description')->nullable(false);
             $table->boolean('is_completed')->default(false);
             $table->string('completed_at')->default(null)->nullable(true);

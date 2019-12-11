@@ -14,4 +14,9 @@ class Checklist extends Model
     protected $fillable = [
         'object_domain', 'object_id', 'description', 'is_completed', 'completed_at', 'updated_by', 'due', 'urgency'
     ];
+    
+    public function templates()
+    {
+        return $this->belongsTo('App\Post', 'foreign_key');
+    }
 }

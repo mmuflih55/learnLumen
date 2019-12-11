@@ -14,6 +14,7 @@ class Checklists extends Migration
     public function up()
     {
         Schema::create('checklists', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('object_domain')->nullable(false);
             $table->string('object_id')->nullable(false);
             $table->string('description')->nullable(false);

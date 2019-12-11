@@ -17,11 +17,16 @@ $router->get('/', function () use ($router) {
 
 
 $router->group(["prefix"=>"checklists"], function () use ($router){
-    // templates
-    $router->get('/templates', 'TemplateController@getTemplates');
-    $router->post('/templates', 'TemplateController@createTemplate');
     // checklist
-    $router->post('/', 'CheckListController@createCheckList');
+    $router->get('/', 'ChecklistController@getChecklists'); //get single checklist
+    $router->post('/', 'ChecklistController@createChecklist'); //create checklist
+    $router->get('/{checklistId}', 'ChecklistController@getChecklist'); //get all checklists
+    $router->patch('/{checklistId}', 'ChecklistController@updateChecklist'); //update checklist
+    $router->delete('/{checklistId}', 'ChecklistController@deleteChecklist'); //delete checklist
+
+    // templates
+    // $router->get('/templates', 'TemplateController@getTemplates');
+    // $router->post('/templates', 'TemplateController@createTemplate');
 
 });
 
